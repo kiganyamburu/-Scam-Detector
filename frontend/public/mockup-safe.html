@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #f9fafb;
+            padding: 20px;
+        }
+        .container { max-width: 600px; margin: 0 auto; }
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .icon { font-size: 40px; }
+        .title { font-size: 24px; font-weight: bold; color: #1f2937; }
+        .score-circle {
+            width: 160px;
+            height: 160px;
+            border-radius: 80px;
+            border: 8px solid #10b981;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            margin: 0 auto 16px;
+        }
+        .score-number { font-size: 56px; font-weight: bold; color: #10b981; }
+        .score-label { font-size: 18px; color: #6b7280; }
+        .risk-badge {
+            background: #10b981;
+            color: white;
+            padding: 8px 24px;
+            border-radius: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            margin: 0 auto 24px;
+            display: inline-block;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .card-title { font-size: 18px; font-weight: bold; color: #1f2937; margin-bottom: 8px; }
+        .card-text { font-size: 16px; color: #4b5563; line-height: 24px; }
+        .indicator {
+            background: white;
+            padding: 16px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .indicator-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+        .indicator-icon { font-size: 20px; }
+        .indicator-title { font-size: 16px; font-weight: 600; color: #1f2937; }
+        .indicator-text { font-size: 14px; color: #6b7280; line-height: 20px; margin-bottom: 8px; }
+        .severity-badge {
+            background: rgba(16, 185, 129, 0.2);
+            color: #10b981;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: bold;
+            display: inline-block;
+        }
+        .section-title { font-size: 20px; font-weight: bold; color: #1f2937; margin-bottom: 16px; }
+        .center { text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="icon">🛡️</div>
+            <div class="title">Scam Detector</div>
+        </div>
+        
+        <div class="center">
+            <div class="score-circle">
+                <div class="score-number">15</div>
+                <div class="score-label">/ 100</div>
+            </div>
+            
+            <div class="risk-badge">SAFE</div>
+        </div>
+        
+        <div class="card">
+            <div class="card-title">Summary</div>
+            <div class="card-text">This appears to be a legitimate email from a recognized company. The sender address matches the official domain, and there are no obvious red flags or suspicious requests.</div>
+        </div>
+        
+        <div class="section-title">Why This Score?</div>
+        
+        <div class="indicator">
+            <div class="indicator-header">
+                <div class="indicator-icon">⚠️</div>
+                <div class="indicator-title">Professional Format</div>
+            </div>
+            <div class="indicator-text">The email has a professional appearance with proper formatting, company branding, and no spelling errors - all good signs of legitimacy.</div>
+            <div class="severity-badge">LOW RISK</div>
+        </div>
+        
+        <div class="indicator">
+            <div class="indicator-header">
+                <div class="indicator-icon">⚠️</div>
+                <div class="indicator-title">Verified Sender</div>
+            </div>
+            <div class="indicator-text">The sender's email address matches the official company domain and includes proper security headers.</div>
+            <div class="severity-badge">LOW RISK</div>
+        </div>
+        
+        <div class="indicator">
+            <div class="indicator-header">
+                <div class="indicator-icon">⚠️</div>
+                <div class="indicator-title">No Suspicious Requests</div>
+            </div>
+            <div class="indicator-text">The message doesn't ask for passwords, personal information, or money - which are common scam tactics.</div>
+            <div class="severity-badge">LOW RISK</div>
+        </div>
+    </div>
+</body>
+</html>

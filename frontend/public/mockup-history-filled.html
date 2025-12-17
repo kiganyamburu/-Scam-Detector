@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f9fafb;
+        }
+        .header {
+            background: white;
+            padding: 16px;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .back-btn { font-size: 24px; padding: 8px; }
+        .header-title { font-size: 20px; font-weight: bold; color: #1f2937; flex: 1; text-align: center; }
+        .clear-btn { color: #ef4444; font-size: 14px; font-weight: 600; padding: 8px; }
+        
+        .history-list {
+            padding: 16px;
+        }
+        
+        .history-item {
+            background: white;
+            border-radius: 12px;
+            padding: 12px;
+            margin-bottom: 12px;
+            display: flex;
+            gap: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            background: #e5e7eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            flex-shrink: 0;
+        }
+        
+        .item-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        
+        .score-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .score-number {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .risk-pill {
+            padding: 4px 8px;
+            border-radius: 8px;
+            font-size: 10px;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .safe { color: #10b981; }
+        .safe-bg { background: #10b981; }
+        .suspicious { color: #f59e0b; }
+        .suspicious-bg { background: #f59e0b; }
+        .scam { color: #ef4444; }
+        .scam-bg { background: #ef4444; }
+        
+        .timestamp {
+            font-size: 12px;
+            color: #6b7280;
+        }
+        
+        .summary {
+            font-size: 14px;
+            color: #4b5563;
+            line-height: 20px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+        
+        .delete-btn {
+            padding: 8px;
+            color: #ef4444;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="back-btn">←</div>
+        <div class="header-title">Scan History</div>
+        <div class="clear-btn">Clear All</div>
+    </div>
+    
+    <div class="history-list">
+        <div class="history-item">
+            <div class="thumbnail">📧</div>
+            <div class="item-content">
+                <div class="item-header">
+                    <div class="score-container">
+                        <span class="score-number scam">87</span>
+                        <span class="risk-pill scam-bg">SCAM</span>
+                    </div>
+                    <span class="timestamp">2h ago</span>
+                </div>
+                <div class="summary">This message shows multiple red flags typical of phishing scams. DO NOT click any links...</div>
+            </div>
+            <div class="delete-btn">🗑️</div>
+        </div>
+        
+        <div class="history-item">
+            <div class="thumbnail">👤</div>
+            <div class="item-content">
+                <div class="item-header">
+                    <div class="score-container">
+                        <span class="score-number suspicious">48</span>
+                        <span class="risk-pill suspicious-bg">SUSPICIOUS</span>
+                    </div>
+                    <span class="timestamp">5h ago</span>
+                </div>
+                <div class="summary">This profile shows some warning signs. Be cautious and verify the person's identity...</div>
+            </div>
+            <div class="delete-btn">🗑️</div>
+        </div>
+        
+        <div class="history-item">
+            <div class="thumbnail">📧</div>
+            <div class="item-content">
+                <div class="item-header">
+                    <div class="score-container">
+                        <span class="score-number safe">15</span>
+                        <span class="risk-pill safe-bg">SAFE</span>
+                    </div>
+                    <span class="timestamp">1d ago</span>
+                </div>
+                <div class="summary">This appears to be a legitimate email from a recognized company. The sender address matches...</div>
+            </div>
+            <div class="delete-btn">🗑️</div>
+        </div>
+        
+        <div class="history-item">
+            <div class="thumbnail">💼</div>
+            <div class="item-content">
+                <div class="item-header">
+                    <div class="score-container">
+                        <span class="score-number suspicious">52</span>
+                        <span class="risk-pill suspicious-bg">SUSPICIOUS</span>
+                    </div>
+                    <span class="timestamp">1d ago</span>
+                </div>
+                <div class="summary">This job posting has some concerning elements. Research the company thoroughly before...</div>
+            </div>
+            <div class="delete-btn">🗑️</div>
+        </div>
+        
+        <div class="history-item">
+            <div class="thumbnail">🛒</div>
+            <div class="item-content">
+                <div class="item-header">
+                    <div class="score-container">
+                        <span class="score-number scam">92</span>
+                        <span class="risk-pill scam-bg">SCAM</span>
+                    </div>
+                    <span class="timestamp">2d ago</span>
+                </div>
+                <div class="summary">This listing is almost certainly a scam. The price is unrealistically low and the seller...</div>
+            </div>
+            <div class="delete-btn">🗑️</div>
+        </div>
+    </div>
+</body>
+</html>
