@@ -210,3 +210,4 @@ For issues and questions, please create an issue in the repository.
 - Google Gemini AI for scam detection capabilities
 - Expo team for the excellent cross-platform framework
 - FastAPI for the robust backend framework
+- FastAPI for the robust backend framework
